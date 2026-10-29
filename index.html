@@ -125,9 +125,15 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;margin:
   padding:.4em .9em;border-radius:999px;display:inline-block;text-shadow:none;box-shadow:0 2px 18px rgba(0,0,0,.4)}
 .hero-static h1{font-size:clamp(2.4rem,13vw,3.4rem);margin:.3em 0}
 .hero-static p{color:var(--text-primary);font-weight:600;font-size:clamp(1.05rem,3.4vw,1.25rem);max-width:30ch;margin:0 auto 20px}
-@media (max-width:720px),(orientation:portrait) and (max-width:1024px),(orientation:portrait) and (pointer:coarse),(orientation:landscape) and (pointer:coarse) and (max-height:560px){
+@media (orientation:landscape) and (pointer:coarse) and (max-height:560px){
   .hero-wrap{display:none}
   .hero-static{display:block}
+}
+@media (max-width:480px){
+  .band h2{font-size:clamp(1.2rem,6.4vw,2rem)}
+  .band-final h1{font-size:clamp(2.1rem,11vw,3.4rem)}
+  .band-final p{font-size:clamp(.95rem,3.6vw,1.15rem)}
+  .band-final .kicker{font-size:.72rem}
 }
 @media (prefers-reduced-motion:reduce){
   .hero-wrap{display:none}
@@ -332,17 +338,17 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
         <p>A equipe conhece cada produto da prateleira e te ajuda a acertar, sem enrolação.</p>
       </div>
       <div class="trust-grid">
-        <div class="trust-card reveal r1">
+        <div class="trust-card observe reveal r1">
           <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M3 10l9-7 9 7v9a2 2 0 01-2 2H5a2 2 0 01-2-2v-9z" stroke="currentColor" stroke-width="1.6"/></svg>
           <h3>Loja física</h3>
           <p>Endereço fixo em Ibiporã. Você entra, vê o produto na prateleira e sai com ele na mão.</p>
         </div>
-        <div class="trust-card reveal r2">
+        <div class="trust-card observe reveal r2">
           <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M6 2h9l5 5v15a1 1 0 01-1 1H6a1 1 0 01-1-1V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           <h3>Nota fiscal sempre</h3>
           <p>Toda compra sai com nota. Se quiser comprovar a procedência depois, o papel está com você.</p>
         </div>
-        <div class="trust-card reveal r3">
+        <div class="trust-card observe reveal r3">
           <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
           <h3>Marca que você conhece</h3>
           <p>Soldiers, Tasty Biscuit e outras marcas de peso na prateleira. Nada de rótulo sem explicação.</p>
@@ -651,9 +657,6 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 
   const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)');
   const staticGates=[
-    '(max-width: 720px)',
-    '(orientation: portrait) and (max-width: 1024px)',
-    '(orientation: portrait) and (pointer: coarse)',
     '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
     '(prefers-reduced-motion: reduce)'
   ].map(q=>matchMedia(q));
