@@ -83,7 +83,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;margin:
 .hero-wrap{position:relative;height:340vh}
 .hero-stage{position:sticky;top:0;height:100vh;overflow:hidden;background:#0a0512}
 .hero-img-wrap{position:absolute;inset:0;overflow:hidden;background:#0a0512}
-.poster{position:absolute;inset:0;background-size:cover;background-position:50% 18%;opacity:1;transition:opacity .4s var(--ease1)}
+.poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;opacity:1;transition:opacity .4s var(--ease1)}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;
   opacity:0;transition:opacity .4s var(--ease1);will-change:transform;transform:translateZ(0)}
 .hero-stage.video-ready .hero-video{opacity:1}
@@ -286,7 +286,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
   <section class="hero-wrap" aria-label="Sr. Makeiko, suplementos originais em Ibiporã">
     <div class="hero-stage" id="heroStage">
       <div class="hero-img-wrap">
-        <div class="poster" id="heroPoster" aria-hidden="true"></div>
+        <img class="poster" id="heroPoster" alt="" aria-hidden="true">
         <video class="hero-video" id="heroVideo" preload="none" muted playsinline aria-hidden="true" tabindex="-1"></video>
       </div>
       <div class="hero-scrim" aria-hidden="true"></div>
@@ -577,7 +577,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
   function initHeroOnce(){
     if(heroInited) return;
     heroInited=true;
-    heroPoster.style.backgroundImage="url('assets/hero-poster.jpg')";
+    heroPoster.src='assets/hero-poster.jpg';
     startBlobFetch();
   }
   async function loadHeroBlob(){
